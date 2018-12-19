@@ -16,6 +16,8 @@ ORDER BY;
 
 ### First SELECT element is on own line with 1 space indent.  Subsequent elements are preceeded with a comma.
 
+The preceding comma simplifies commenting out or removing a column.
+
 ```sql
 SELECT
  field1
@@ -25,6 +27,8 @@ FROM ...
 ```
 
 ### Nested statements are indented 4 spaces.
+
+Indention makes the hierarchy easy to find and follow.
 
 ```sql
 SELECT *
@@ -54,4 +58,16 @@ SELECT *
 FROM main_table
 LEFT OUTER JOIN lookup_alpha ON ()
 LEFT OUTER JOIN lookup_beta ON ()
+```
+
+### Use double-quotes and not "AS" when renaming columns.
+
+More concise.
+
+```sql
+SELECT
+ f1 "field1"
+ , f2 "field2"
+ , f3 "field3"
+FROM ...
 ```
